@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6eff3a45652231bd255d209cce4ecb50 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6eff3a45652231bd255d209cce4ecb50" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6eff3a45652231bd255d209cce4ecb50 = L.map(
+                "map_6eff3a45652231bd255d209cce4ecb50",
+                {
+                    center: [24.0, -104.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_714995c687d5f08aa501d1b08472018c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_714995c687d5f08aa501d1b08472018c.addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+            var circle_marker_1677e57304665716176972e16b99baf4 = L.circleMarker(
+                [23.3667, -104.55],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 35.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_0bb83f06986b0ab2d7f03bb293806212 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5dd6418478dbc45aaf954ab42e043ab5 = $(`<div id="html_5dd6418478dbc45aaf954ab42e043ab5" style="width: 100.0%; height: 100.0%;"><b>LAS JOYAS, MEZQUITAL, DURANGO</b><br>Casos: 20<br>Prioridad: Red</div>`)[0];
+                popup_0bb83f06986b0ab2d7f03bb293806212.setContent(html_5dd6418478dbc45aaf954ab42e043ab5);
+            
+        
+
+        circle_marker_1677e57304665716176972e16b99baf4.bindPopup(popup_0bb83f06986b0ab2d7f03bb293806212)
+        ;
+
+        
+    
+    
+            var circle_marker_a9240740d4a36b4a5fec04dfc9d18781 = L.circleMarker(
+                [24.0277, -104.6532],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 32.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_121c701451f19dd9145f962cc19059bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24f8947d7f3500c7404ae37c800cfb58 = $(`<div id="html_24f8947d7f3500c7404ae37c800cfb58" style="width: 100.0%; height: 100.0%;"><b>VICTORIA DE DURANGO, DURANGO</b><br>Casos: 18<br>Prioridad: Red</div>`)[0];
+                popup_121c701451f19dd9145f962cc19059bd.setContent(html_24f8947d7f3500c7404ae37c800cfb58);
+            
+        
+
+        circle_marker_a9240740d4a36b4a5fec04dfc9d18781.bindPopup(popup_121c701451f19dd9145f962cc19059bd)
+        ;
+
+        
+    
+    
+            var circle_marker_85d7065c40932e37a5f7a1daf38f4d60 = L.circleMarker(
+                [23.3156, -104.4925],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_915bdd63f085f997aac88c78e0a7c601 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6d08469fb65ef9e12f83c90d8692278 = $(`<div id="html_f6d08469fb65ef9e12f83c90d8692278" style="width: 100.0%; height: 100.0%;"><b>LA GUAJOLOTA, MEZQUITAL, DURANGO</b><br>Casos: 8<br>Prioridad: Orange</div>`)[0];
+                popup_915bdd63f085f997aac88c78e0a7c601.setContent(html_f6d08469fb65ef9e12f83c90d8692278);
+            
+        
+
+        circle_marker_85d7065c40932e37a5f7a1daf38f4d60.bindPopup(popup_915bdd63f085f997aac88c78e0a7c601)
+        ;
+
+        
+    
+    
+            var circle_marker_b7921469bb00680b067483e3307287ba = L.circleMarker(
+                [24.1611, -104.5714],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_de865e62d67dcff30b50c3c40b5f5930 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_436ed1193831832b41d83cd11aa9182e = $(`<div id="html_436ed1193831832b41d83cd11aa9182e" style="width: 100.0%; height: 100.0%;"><b>COLONIA HIDALGO, DURANGO</b><br>Casos: 3<br>Prioridad: Yellow</div>`)[0];
+                popup_de865e62d67dcff30b50c3c40b5f5930.setContent(html_436ed1193831832b41d83cd11aa9182e);
+            
+        
+
+        circle_marker_b7921469bb00680b067483e3307287ba.bindPopup(popup_de865e62d67dcff30b50c3c40b5f5930)
+        ;
+
+        
+    
+    
+            var circle_marker_4f60324dd78e6ffff75259b08059cd3c = L.circleMarker(
+                [23.3667, -104.55],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_7035c2c1b17a9b9bdebd1704e5ee976e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bfd689cb14f8aa4dc3da7d74a670c0a2 = $(`<div id="html_bfd689cb14f8aa4dc3da7d74a670c0a2" style="width: 100.0%; height: 100.0%;"><b>LA JOYA, MEZQUITAL, DURANGO</b><br>Casos: 2<br>Prioridad: Yellow</div>`)[0];
+                popup_7035c2c1b17a9b9bdebd1704e5ee976e.setContent(html_bfd689cb14f8aa4dc3da7d74a670c0a2);
+            
+        
+
+        circle_marker_4f60324dd78e6ffff75259b08059cd3c.bindPopup(popup_7035c2c1b17a9b9bdebd1704e5ee976e)
+        ;
+
+        
+    
+    
+            var circle_marker_42e3b5193dc430f1f920b4e2f8ed5a1b = L.circleMarker(
+                [25.5611, -103.4981],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_6aa712db03139de9959510bd4908395d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6ea98d8ab9b4f59a599a8551bb3e348 = $(`<div id="html_b6ea98d8ab9b4f59a599a8551bb3e348" style="width: 100.0%; height: 100.0%;"><b>GÓMEZ PALACIO, DURANGO</b><br>Casos: 1<br>Prioridad: Green</div>`)[0];
+                popup_6aa712db03139de9959510bd4908395d.setContent(html_b6ea98d8ab9b4f59a599a8551bb3e348);
+            
+        
+
+        circle_marker_42e3b5193dc430f1f920b4e2f8ed5a1b.bindPopup(popup_6aa712db03139de9959510bd4908395d)
+        ;
+
+        
+    
+    
+            var circle_marker_3c9d13bef563cbfa51efd356d6c7bad1 = L.circleMarker(
+                [23.7344, -103.985],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_6c5458ccc2c971ac3ce0fb88ce14e3ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54049dd3dacd9fd0ace83d7c8428799b = $(`<div id="html_54049dd3dacd9fd0ace83d7c8428799b" style="width: 100.0%; height: 100.0%;"><b>VICENTE GUERRERO, DURANGO</b><br>Casos: 1<br>Prioridad: Green</div>`)[0];
+                popup_6c5458ccc2c971ac3ce0fb88ce14e3ef.setContent(html_54049dd3dacd9fd0ace83d7c8428799b);
+            
+        
+
+        circle_marker_3c9d13bef563cbfa51efd356d6c7bad1.bindPopup(popup_6c5458ccc2c971ac3ce0fb88ce14e3ef)
+        ;
+
+        
+    
+    
+            var circle_marker_287b9acdbe0023274ad4bc334c88f741 = L.circleMarker(
+                [23.4144, -104.6461],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.5, "stroke": true, "weight": 3}
+            ).addTo(map_6eff3a45652231bd255d209cce4ecb50);
+        
+    
+        var popup_4b7125a5d1bc33512db6ce3c3a282098 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d384ac57392202dfa52592871a58340 = $(`<div id="html_1d384ac57392202dfa52592871a58340" style="width: 100.0%; height: 100.0%;"><b>CIHUACORA, MEZQUITAL, DURANGO</b><br>Casos: 1<br>Prioridad: Green</div>`)[0];
+                popup_4b7125a5d1bc33512db6ce3c3a282098.setContent(html_1d384ac57392202dfa52592871a58340);
+            
+        
+
+        circle_marker_287b9acdbe0023274ad4bc334c88f741.bindPopup(popup_4b7125a5d1bc33512db6ce3c3a282098)
+        ;
+
+        
+    
+</script>
+</html>

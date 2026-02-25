@@ -1,0 +1,78 @@
+﻿
+Sheet: Poblaci¾nTotal 2026
+  Col 0: 'Grupo'
+  Col 1: '< 1 a±o '
+  Col 2: ' 1 a±o  '
+  Col 3: '2 a±os  '
+  Col 4: '3 a±os  '
+  Col 5: '4 a±os  '
+  Col 6: '5 a±os  '
+  Col 7: '6 a±os  '
+  Col 8: '7 a±os  '
+  Col 9: '8 a±os'
+  Col 10: '9 a±os'
+  Col 11: '10 a±os'
+  Col 12: '11 a±os'
+  Col 13: '12 a±os'
+  Col 14: '13 a±os'
+  Col 15: '14 a±os'
+  Col 16: '15 a 19 a±os'
+  Col 17: '20 a 39 a±os'
+  Col 18: '40 a 49 a±os'
+  Col 19: '50 a 59 a±os'
+  Col 20: '60 a±os y mßs'
+  Col 21: 'TOTAL'
+  Durango values: {'Grupo': 'DURANGO', '< 1 a±o ': 12669, ' 1 a±o  ': 12255, '2 a±os  ': 12293, '3 a±os  ': 13071, '4 a±os  ': 13323, '5 a±os  ': 13532, '6 a±os  ': 13869.0, '7 a±os  ': 14008, '8 a±os': 13684, '9 a±os': 13912, '10 a±os': 14749, '11 a±os': 15065, '12 a±os': 14710, '13 a±os': 13519, '14 a±os': 12410, '15 a 19 a±os': 51174, '20 a 39 a±os': 192899, '40 a 49 a±os': 80995, '50 a 59 a±os': 52756, '60 a±os y mßs': 47754, 'TOTAL': 628647.0}
+
+Sheet: Pob META
+  Col 0: 'Grupo'
+  Col 1: '6 a 11 meses'
+  Col 2: '1 a±o'
+  Col 3: '18 meses'
+  Col 4: 'Rezagados
+2 a 12 a±os'
+  Col 5: '13 a 19 a±os '
+  Col 6: '20 A 39'
+  Col 7: '40 A 49'
+  Col 8: 'TOTAL'
+  Durango values: {'Grupo': 'DURANGO', '6 a 11 meses': 6335, '1 a±o': 12255, '18 meses': 12255, 'Rezagados\n2 a 12 a±os': 38054, '13 a 19 a±os ': 30841, '20 A 39': 96450, '40 A 49': 40498, 'TOTAL': 230353}
+
+Sheet: Dosis aplicadas
+  Col 0: 'GRUPO'
+  Col 1: '6 a 11 meses'
+  Col 2: '1 a±o'
+  Col 3: '18 meses'
+  Col 4: 'Rezagados
+2 a 12 a±os'
+  Col 5: '13 a 19 a±os '
+  Col 6: '20 A 39'
+  Col 7: '40 A 49'
+  Col 8: 'TOTAL'
+  Durango values: {'GRUPO': 'DURANGO', '6 a 11 meses': 8226, '1 a±o': 1309, '18 meses': 1050, 'Rezagados\n2 a 12 a±os': 13759, '13 a 19 a±os ': 8423, '20 A 39': 31497, '40 A 49': 6083, 'TOTAL': 70347}
+
+Sheet: Susceptibles
+  Col 0: 'GRUPO'
+  Col 1: '6 a 11 meses'
+  Col 2: 'RATIFICACIËN O RECTIFICACIËN'
+  Col 3: 'JUSTIFICACIËN'
+  Col 4: '1 a±o'
+  Col 5: 'RATIFICACIËN O RECTIFICACIËN.1'
+  Col 6: 'JUSTIFICACIËN.1'
+  Col 7: '18 meses'
+  Col 8: 'RATIFICACIËN O RECTIFICACIËN.2'
+  Col 9: 'JUSTIFICACIËN.2'
+  Col 10: 'Rezagados
+2 a 12 a±os'
+  Col 11: 'RATIFICACIËN O RECTIFICACIËN.3'
+  Col 12: 'JUSTIFICACIËN.3'
+  Col 13: '13 a 19 a±os '
+  Col 14: 'RATIFICACIËN O RECTIFICACIËN.4'
+  Col 15: 'JUSTIFICACIËN.4'
+  Col 16: '20 A 39'
+  Col 17: 'RATIFICACIËN O RECTIFICACIËN.5'
+  Col 18: 'JUSTIFICACIËN.5'
+  Col 19: '40 A 49'
+  Col 20: 'RATIFICACIËN O RECTIFICACIËN.6'
+  Col 21: 'JUSTIFICACIËN.6'
+  Col 22: 'TOTAL'
+  Durango values: {'GRUPO': 'DURANGO', '6 a 11 meses': 0, 'RATIFICACIËN O RECTIFICACIËN': nan, 'JUSTIFICACIËN': nan, '1 a±o': 671, 'RATIFICACIËN O RECTIFICACIËN.1': nan, 'JUSTIFICACIËN.1': nan, '18 meses': 223, 'RATIFICACIËN O RECTIFICACIËN.2': nan, 'JUSTIFICACIËN.2': nan, 'Rezagados\n2 a 12 a±os': 24295, 'RATIFICACIËN O RECTIFICACIËN.3': nan, 'JUSTIFICACIËN.3': nan, '13 a 19 a±os ': 22418, 'RATIFICACIËN O RECTIFICACIËN.4': nan, 'JUSTIFICACIËN.4': nan, '20 A 39': 64953, 'RATIFICACIËN O RECTIFICACIËN.5': nan, 'JUSTIFICACIËN.5': nan, '40 A 49': 34415, 'RATIFICACIËN O RECTIFICACIËN.6': nan, 'JUSTIFICACIËN.6': nan, 'TOTAL': 146975}

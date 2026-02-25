@@ -1,0 +1,132 @@
+{
+    "text": [
+        "Informe de Priorización de Vacunación - Sarampión 2026",
+        "Fecha de Actualización: 16 de febrero de 2026",
+        "Actualización basada en 61 casos confirmados (Incremento de 9 casos respecto al reporte anterior).",
+        "1. Priorización por Localidad (Casos Totales: 61)",
+        "2. Priorización por Grupo de Edad",
+        "3. Centros de Notificación con mayor captación",
+        "Distribución Geográfica (Referencia)",
+        "Conclusiones y Recomendaciones",
+        "Crecimiento en Capital: Se observa un aumento significativo en Victoria de Durango (26 casos), convirtiéndose en el foco principal de atención urbana.",
+        "Vulnerabilidad Infantil y Productiva: Los grupos de 20-39 y menores de 5 años requieren campañas de vacunación y bloqueos específicos inmediatos."
+    ],
+    "tables": [
+        [
+            [
+                "Localidad",
+                "Casos",
+                "Prioridad"
+            ],
+            [
+                "VICTORIA DE DURANGO",
+                "26",
+                "Muy Alta"
+            ],
+            [
+                "LAS JOYAS (Mezquital)",
+                "20",
+                "Muy Alta"
+            ],
+            [
+                "LA GUAJOLOTA",
+                "8",
+                "Alta"
+            ],
+            [
+                "COLONIA HIDALGO",
+                "4",
+                "Media"
+            ],
+            [
+                "LA JOYA",
+                "2",
+                "Media"
+            ],
+            [
+                "GÓMEZ PALACIO",
+                "1",
+                "Baja"
+            ],
+            [
+                "VICENTE GUERRERO",
+                "1",
+                "Baja"
+            ],
+            [
+                "CIHUACORA",
+                "1",
+                "Baja"
+            ]
+        ],
+        [
+            [
+                "Grupo de Edad",
+                "Casos",
+                "Prioridad"
+            ],
+            [
+                "20-39 años",
+                "17",
+                "Crítica"
+            ],
+            [
+                "0-4 años",
+                "12",
+                "Crítica"
+            ],
+            [
+                "5-9 años",
+                "11",
+                "Alta"
+            ],
+            [
+                "10-14 años",
+                "9",
+                "Alta"
+            ],
+            [
+                "15-19 años",
+                "8",
+                "Alta"
+            ],
+            [
+                "40+ años",
+                "4",
+                "Media"
+            ]
+        ],
+        [
+            [
+                "Centro de Salud / Hospital",
+                "Casos Notificados",
+                "Relevancia"
+            ],
+            [
+                "SSD H. Materno Inf. (Durango/Mez)",
+                "23",
+                "Principal"
+            ],
+            [
+                "SSD CESSA N° 1 (Durango)",
+                "11",
+                "Alta"
+            ],
+            [
+                "IMSS HGZ N° 1",
+                "4",
+                "Media"
+            ],
+            [
+                "ISSSTE H. Santiago Ramón",
+                "9",
+                "Alta"
+            ],
+            [
+                "Otros (Gral 450, CESSA Hidalgo, etc)",
+                "14",
+                "Complementario"
+            ]
+        ]
+    ]
+}

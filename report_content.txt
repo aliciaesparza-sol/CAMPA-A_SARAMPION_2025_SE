@@ -1,0 +1,296 @@
+--- FULL TEXT ---
+INFORME TÉCNICO – ESTRATEGIA ESTATAL DE VACUNACIÓN CONTRA SARAMPIÓN
+DURANGO 2026
+Fecha de corte: 11 de febrero de 2026.
+Elaborado para: Dirección de Salud Pública / Programa de Vacunación Universal
+1. Resumen ejecutivo
+Durango presenta un brote activo de sarampión en 2026 con 31 casos confirmados al 11/02/2026. La transmisión se concentra principalmente en el municipio de Durango (17 casos) y Mezquital (12 casos), con casos aislados en Gómez Palacio y Vicente Guerrero. El estado cuenta con 459 unidades de salud registradas, lo que permite una respuesta operativa amplia; sin embargo, la intervención debe priorizarse territorialmente por colonias/localidades con casos confirmados y por microfocos.
+2. Fuentes de información
+• Listado de casos confirmados del brote de sarampión en Durango 2026 (corte 11/02/2026).
+• Informes individuales EFES (residencia actual) de casos confirmados.
+• Padrón estatal de unidades de vacunación (459 sedes con coordenadas).
+3. Análisis epidemiológico
+3.1 Casos confirmados por municipio (corte 11/02/2026):
+Gráfica 1. Casos confirmados por municipio.
+Gráfica 2. Distribución de unidades de salud (Top 10 municipios).
+4. Priorización territorial por domicilio (microplaneación)
+Se realizó la extracción de domicilios (residencia actual) desde los informes EFES disponibles. Con base en la repetición de colonias/localidades y códigos postales, se identifican zonas prioritarias.
+4.1 Tabla de domicilios extraídos (residencia actual):
+4.2 Zonas priorizadas por concentración de domicilios registrados:
+5. Estrategia operativa de vacunación (modelo por anillos)
+La estrategia se plantea en 3 anillos operativos, con metas y acciones diferenciadas:
+Anillo 1 – Control inmediato (0 a 7 días)
+• Bloqueo vacunal en <72 horas en torno a cada caso confirmado.
+• Barrido casa por casa en colonias/localidades con repetición de casos.
+• Vacunación intensiva en escuelas y guarderías de las zonas prioritarias.
+• Puestos semifijos en puntos de alta afluencia.
+Anillo 2 – Contención municipal (8 a 21 días)
+• Extensión del barrido a colonias colindantes y localidades cercanas.
+• Ampliación de horarios en unidades estratégicas.
+• Revisión nominal de esquemas en menores de 10 años.
+Anillo 3 – Cierre de brechas estatal (22 a 42 días)
+• Recuperación de esquemas en municipios sin casos, priorizando rezago.
+• Brigadas itinerantes para comunidades rurales y de difícil acceso.
+• Consolidación de coberturas ≥95% en población objetivo.
+6. Cronograma de 6 semanas (metas operativas)
+7. Recomendaciones operativas clave
+• Priorizar de manera inmediata las colonias/localidades con repetición de domicilios: Héctor Mayagoitia (C.P. 34010), Legisladores (34046), y La Guajolota (34985).
+• Implementar brigadas móviles en Mezquital con logística de cadena de frío reforzada y registro nominal.
+• Asegurar abasto crítico de SRP, SR y aguja 27x13. Sin aguja 27x13 la operación se compromete.
+• Vacunación ampliada 1 a 49 años según antecedente y lineamientos de control de brote.
+• Vinculación con IMSS e ISSSTE para vacunación simultánea y evitar duplicidad.
+• Monitoreo diario de dosis aplicadas y cobertura por colonia/localidad.
+• Activación de vacunación escolar inmediata en zonas prioritarias.
+8. Anexos
+Anexo 1. Tabla completa de domicilios extraídos (EFES).
+Anexo 2. Tabla de priorización por concentración (CP/colonia/localidad).
+Anexo 3. Padrón de unidades de salud (459).
+ESTRATEGIA ESTATAL DE VACUNACIÓN CONTRA SARAMPIÓN – DURANGO 2026
+(Análisis situacional y priorización territorial por colonias/localidades con casos)
+1) Situación epidemiológica actual (Durango, 2026)
+Con base en el listado de casos confirmados, Durango presenta un brote activo de sarampión con casos concentrados en 4 municipios, con clara agrupación territorial.
+🔴 Casos confirmados (al 11/02/2026)
+Total de casos confirmados: 31
+Periodo: del 18/01/2026 al 10/02/2026 
+LISTADO CASOS CONFIRMADOS BROTE…
+Fecha con mayor incremento: 10/02/2026 con 9 casos (indica aceleración del brote)
+Distribución por municipio (casos confirmados)
+Durango: 17 casos
+Mezquital: 12 casos
+Gómez Palacio: 1 caso
+Vicente Guerrero: 1 caso 
+LISTADO CASOS CONFIRMADOS BROTE…
+📌 Esto indica que el brote es principalmente:
+Urbano (Durango capital)
+Rural/indígena y de difícil acceso (Mezquital)
+2) Unidades de salud disponibles (capacidad operativa)
+De acuerdo con el padrón estatal compartido, Durango cuenta con:
+✅ Total de unidades registradas:
+459 unidades de salud
+Municipios con mayor número de unidades
+Durango: 56
+Mezquital: 44
+Gómez Palacio: 31
+Pueblo Nuevo: 27
+Tamazula: 22
+San Dimas: 22
+Lerdo: 20
+📌 Interpretación operativa:
+El estado sí tiene red suficiente, pero el reto real es:
+biológico suficiente (SRP/SR)
+aguja 27x13
+microplaneación por localidades
+brigadas móviles en Mezquital
+3) Priorización territorial por colonias/localidades con casos
+Del listado de casos confirmados, las zonas con transmisión activa son:
+🔥 Localidades/colonias con mayor concentración
+Victoria de Durango: 14 casos
+La Guajolota (Mezquital): 7 casos
+La Joya (Mezquital): 4 casos (incluye defunción)
+Colonia Hidalgo (Durango): 3 casos
+Chihuacora (Mezquital): 1 caso
+Gómez Palacio: 1 caso
+Vicente Guerrero: 1 caso 
+LISTADO CASOS CONFIRMADOS BROTE…
+📌 Esto indica dos focos rojos:
+Durango capital (Victoria de Durango + Colonia Hidalgo)
+Mezquital (La Guajolota + La Joya + Chihuacora)
+4) Población objetivo y grupos de mayor riesgo
+Los casos confirmados incluyen población pediátrica y adulta.
+Grupos con más casos:
+1 a 4 años
+5 a 9 años
+20 a 49 años 
+LISTADO CASOS CONFIRMADOS BROTE…
+📌 Interpretación epidemiológica:
+Hay transmisión comunitaria (no solo infantil).
+Se requiere estrategia mixta:
+control de brote (bloqueo)
+vacunación intensiva por colonia
+recuperación de esquemas
+5) OBJETIVO GENERAL
+Interrumpir la transmisión del virus del sarampión en el estado de Durango mediante vacunación intensiva, bloqueo epidemiológico, barridos focalizados por colonias/localidades con casos y fortalecimiento de la red de servicios.
+6) OBJETIVOS ESPECÍFICOS
+Alcanzar ≥95% de cobertura en población objetivo en colonias/localidades con casos.
+Ejecutar bloqueo vacunal en <72 horas posterior a notificación.
+Incrementar la vacunación en:
+niñas y niños 1–9 años
+adolescentes
+adultos 20–49 años con antecedente vacunal incompleto
+Reducir riesgo de transmisión en:
+escuelas
+comunidades rurales
+unidades médicas y salas de espera
+7) ESTRATEGIA OPERATIVA (Modelo en 3 anillos)
+ANILLO 1 – Control inmediato (Foco rojo)
+Zonas:
+Victoria de Durango
+Colonia Hidalgo
+La Guajolota (Mezquital)
+La Joya (Mezquital) 
+LISTADO CASOS CONFIRMADOS BROTE…
+Acciones (primeros 7 días):
+Bloqueo casa por casa (SRP/SR según edad)
+Vacunación en escuelas
+Puestos semifijos en puntos de concentración
+Búsqueda activa de no vacunados
+📌 Meta:
+Vacunar ≥95% de población de 1 a 49 años en el área de influencia.
+ANILLO 2 – Contención municipal
+Municipios prioritarios:
+Durango
+Mezquital
+Gómez Palacio
+Vicente Guerrero 
+LISTADO CASOS CONFIRMADOS BROTE…
+Acciones (días 8 a 21):
+Barrido en colonias cercanas al foco
+Ampliación de horarios en CESSA y centros de salud
+Vacunación en ferias, mercados y plazas
+ANILLO 3 – Prevención estatal (cierre de brechas)
+Acciones (días 22 a 45):
+Intensificación en municipios con menor acceso
+Brigadas itinerantes en comunidades rurales
+Recuperación de esquemas en menores de 10 años
+8) PRIORIZACIÓN POR MUNICIPIO (con base en casos)
+8.1 Durango (17 casos confirmados)
+Zonas prioritarias:
+Victoria de Durango (principal)
+Colonia Hidalgo 
+LISTADO CASOS CONFIRMADOS BROTE…
+Capacidad:
+56 unidades de salud registradas en el municipio
+Estrategia específica:
+Operación intensiva en:
+CESSA 1
+Hospital Materno Infantil
+Hospital 450
+Macrobrigadas urbanas por cuadrantes
+8.2 Mezquital (12 casos confirmados)
+Zonas prioritarias:
+La Guajolota
+La Joya (defunción)
+Chihuacora 
+LISTADO CASOS CONFIRMADOS BROTE…
+Capacidad:
+44 unidades de salud registradas en Mezquital
+Estrategia específica:
+Brigadas móviles (no solo fijo en unidades)
+Equipos con:
+termo
+control estricto de cadena de frío
+registro nominal por familia
+8.3 Gómez Palacio (1 caso)
+Capacidad:
+31 unidades
+Estrategia:
+Vacunación preventiva para evitar expansión a La Laguna.
+8.4 Vicente Guerrero (1 caso)
+Capacidad:
+4 unidades
+Estrategia:
+Bloqueo total + revisión de escuelas.
+9) ESTRATEGIA DE VACUNACIÓN POR GRUPO DE EDAD
+Niñas y niños 1 a 9 años
+SRP: completar esquema (1ra y 2da dosis según edad)
+Puestos en:
+escuelas
+guarderías
+centros comunitarios
+Adolescentes 10 a 19 años
+SR: dosis adicional si antecedente incierto o incompleto
+Campañas en secundarias/prepas
+Adultos 20 a 49 años
+SR: dosis si no hay antecedente documentado
+Vacunación en:
+centros laborales
+dependencias
+hospitales y unidades
+10) LOGÍSTICA Y ORGANIZACIÓN OPERATIVA
+10.1 Distribución de brigadas
+Se recomienda estructurar:
+Durango capital: 8–12 brigadas simultáneas
+Mezquital: 6–8 brigadas móviles
+Gómez Palacio: 4 brigadas preventivas
+Vicente Guerrero: 2 brigadas intensivas
+10.2 Insumos críticos
+El éxito depende de asegurar:
+SRP
+SR
+Aguja 27x13 (para SRP/SR)
+Jeringas 0.5 ml con aguja 23x25 (para influenza, hexa, DPT)
+11) INDICADORES DE MONITOREO (diario y semanal)
+Indicadores clave:
+Dosis aplicadas SRP y SR por municipio y colonia
+Cobertura por grupo de edad
+% de bloqueo realizado en <72 horas
+Tasa de rechazo (si existe)
+Existencias de biológico y agujas
+12) CONCLUSIONES
+Durango presenta un brote activo con 31 casos confirmados, concentrados principalmente en Durango capital y Mezquital 
+LISTADO CASOS CONFIRMADOS BROTE…
+.
+La transmisión ya involucra niños y adultos, lo que obliga a una estrategia de vacunación ampliada.
+El estado cuenta con 459 unidades de salud, lo cual permite operatividad suficiente, pero se requiere reforzamiento con biológico e insumos para sostener la respuesta .
+La estrategia más costo-efectiva es la priorización por colonias/localidades con casos (Victoria de Durango, Colonia Hidalgo, La Guajolota y La Joya).
+
+--- TABLES ---
+
+Table 0:
+Municipio | Casos confirmados | Unidades de salud registradas
+Durango | 17 | 56
+Mezquital | 12 | 44
+Gómez Palacio | 1 | 31
+Vicente Guerrero | 1 | 4
+
+Table 1:
+ID Caso | Calle y número | Colonia | CP | Municipio | Localidad | Entre calles / referencia
+48157 | Privada Hacienda La Boca | Haciendas del Saltito | 34105 | Durango | Durango | Av. La Salle
+49391 | Blvd. José Ramón Hernández Meraz 754 | Legisladores | 34046 | Durango | Victoria de Durango | Máximo Gámiz Parral / Juan Francisco Salazar
+49914 | Domicilio conocido s/n |  | 34983 | Mezquital | Santa María de Ocotán | 
+50179 | Domicilio conocido s/n | Hidalgo | 34310 | Durango | Durango | Jacal Negro
+50056 | Privada Benito Juárez 158 | Independencia (Mártires) | 35045 | Gómez Palacio | Gómez Palacio | Joaquín Guerra
+50859 | Domicilio conocido s/n |  | 34985 | Mezquital | La Guajolota | 
+50555 | Domicilio conocido s/n |  | 34985 | Mezquital | La Guajolota | 
+50563 | Benito Juárez s/n |  | 34310 | Durango | Valentín Gómez Farías | Ignacio López Rayón
+50538 | Joel de Quiroga 615 | Héctor Mayagoitia | 34010 | Durango | Victoria de Durango | Carlos Santa María / Leopoldo Arreola
+50969 | Fco. Javier 404 | Zona Centro | 34890 | Vicente Guerrero | Vicente Guerrero | 10 de Mayo
+50924 | Manuel Doblado s/n |  | 34310 | Durango | Francisco Javier Mina | Justo Sierra
+51038 | Domingo Arrieta 328 | Gobernadores | 34045 | Durango | Durango | 
+50879 | Hielo 110 | Valentín Gómez Farías | 34010 | Durango | Durango | Acuario
+50880 | Privada La San Martina 529 | Loma Dorada Diamante | 34105 | Durango | Durango | 
+51503 | Cuarzo 120 | Laderas del Pedregal | 34015 | Durango | Durango | Constelación
+52004 | Domicilio conocido s/n | Legisladores | 34046 | Durango | Durango | 
+52056 | Pegasus 109 | Cielo Vista | 34038 | Durango | Durango | 
+49917 | Domicilio conocido s/n |  | 34985 | Mezquital | La Guajolota | 
+49688 | Calle sin nombre (domicilio conocido) |  | 24980 | Mezquital | La Guajolota | 
+53114 | Joel de Quiroga 615 | Héctor Mayagoitia | 34010 | Durango | Victoria de Durango | Carlos Santa María / Leopoldo Arreola
+53138 | Joel de Quiroga 615 | Héctor Mayagoitia | 34010 | Durango | Victoria de Durango | Carlos Santa María / Leopoldo Arreola
+
+Table 2:
+Municipio | Zona (colonia/localidad) | C.P. | Casos (con domicilio registrado)
+Durango | Héctor Mayagoitia | 34010 | 3
+Mezquital | La Guajolota | 34985 | 3
+Durango | Legisladores | 34046 | 2
+Durango | Cielo Vista | 34038 | 1
+Durango | Francisco Javier Mina | 34310 | 1
+Durango | Gobernadores | 34045 | 1
+Durango | Haciendas del Saltito | 34105 | 1
+Durango | Hidalgo | 34310 | 1
+Durango | Laderas del Pedregal | 34015 | 1
+Durango | Loma Dorada Diamante | 34105 | 1
+Durango | Valentín Gómez Farías | 34010 | 1
+Durango | Valentín Gómez Farías | 34310 | 1
+Gómez Palacio | Independencia (Mártires) | 35045 | 1
+Mezquital | La Guajolota | 24980 | 1
+Mezquital | Santa María de Ocotán | 34983 | 1
+Vicente Guerrero | Zona Centro | 34890 | 1
+
+Table 3:
+Semana | Objetivo | Zonas prioritarias | Indicadores mínimos
+1 | Bloqueo inmediato y barrido focal | Héctor Mayagoitia (34010), Legisladores (34046), Hidalgo (34310), La Guajolota (34985) | Bloqueo <72h; dosis diarias; % cobertura zona
+2 | Continuidad barrido + escuelas | Durango capital y Mezquital (localidades con casos) | ≥80% población objetivo visitada
+3 | Contención municipal | Durango, Mezquital, Gómez Palacio, Vicente Guerrero | Cobertura ≥90% en anillo 2
+4 | Cierre de brechas | Municipios con rezago | Cobertura ≥95% menores 1–9 años
+5 | Seguimiento + refuerzo | Revisita de zonas con rechazo/ausentes | % esquemas completos
+6 | Evaluación y sostenimiento | Todo el estado | Reducción de notificación; cierre de brote

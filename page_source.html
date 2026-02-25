@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="max-age=3600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>¿Dónde me vacuno?</title>
+    <meta name="description"
+        content="Mapa interactivo de puestos de vacunación en México. Encuentra tu unidad vacunadora o puesto de vacunación más cercano, consulta horarios y biológicos disponibles.">
+    <meta name="keywords"
+        content="vacunación, mapa vacunas, puestos de vacunación, salud, méxico, covid-19, influenza, esquema de vacunación, cartilla nacional">
+    <meta name="author" content="Secretaría de Salud">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="¿Dónde me vacuno? - Mapa Interactivo">
+    <meta property="og:description"
+        content="Encuentra tu centro de vacunación más cercano. Consulta horarios, ubicación y vacunas disponibles.">
+    <meta property="og:image" content="assets/banner.jpeg">
+
+    <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+    <script>
+        // Versión que cambia cada hora
+        const v_asset = Math.floor(Date.now() / (1000 * 60 * 60));
+        document.write(`<link rel="stylesheet" href="assets/leaflet/dist/leaflet.css?v=${v_asset}" \/>`);
+    </script>
+    <!-- Marker Cluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* Hero Section (Fondo Guinda) */
+        .hero-section {
+            background: linear-gradient(180deg, #4A0B26 0%, #982447 100%);
+            color: white;
+            padding: 40px 0 60px 0;
+            position: relative;
+            margin-bottom: 0px;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 450;
+            font-size: 1.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            opacity: 1;
+            line-height: 1.6;
+        }
+
+        /* Estilos de los Filtros en el Hero */
+        .filter-label {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 2.0rem;
+        }
+
+        .hero-select {
+            height: 40px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            padding-left: 15px;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Contenedor Principal (Mapa y Resultados) */
+        /* Contenedor Principal (Mapa y Resultados) */
+        .main-content-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 20px;
+            margin-bottom: 60px;
+            min-height: 500px;
+            position: relative;
+            z-index: 10;
+        }
+
+        #map {
+            height: 600px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        #filtro-biologicos {
+            max-height: 220px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* Tamaño de fuente para popups del mapa */
+        .leaflet-popup-content {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .leaflet-popup-content strong {
+            font-size: 16px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* Diseño del Popup */
+        .popup-card {
+            font-family: 'Montserrat', sans-serif;
+            min-width: 250px;
+        }
+
+        .popup-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .popup-subtitle {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .popup-section {
+            margin-bottom: 8px;
+        }
+
+        .popup-label {
+            font-weight: 700;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .popup-text {
+            font-size: 13px;
+            color: #555;
+            margin: 0;
+        }
+
+        .popup-list {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+            font-size: 13px;
+            color: #444;
+        }
+
+        .popup-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            border: 2px solid #9D2449;
+            /* Color Institucional */
+            color: #9D2449;
+            background: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.2s;
+        }
+
+        .popup-btn:hover {
+            background-color: #9D2449;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Estilos Cards Resultados */
+        .card-resultado {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+            height: 100%;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        .card-resultado:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .card-title-text {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .label-dato {
+            font-weight: 600;
+            color: #444;
+            display: block;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        .texto-dato {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #9D2449;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Estilos Tabla de Resultados */
+        .table-custom {
+            width: 100%;
+            margin-bottom: 2rem;
+            color: #212529;
+            background-color: transparent;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .table-custom thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+            background-color: #691C32;
+            /* Guinda */
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 15px 15px;
+            /* Más padding */
+            white-space: nowrap;
+            font-size: 1.2rem;
+            /* Aumentado */
+        }
+
+        .table-custom tbody tr {
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .table-custom tbody tr:hover {
+            background-color: #f8f9fa;
+            /* Hover muy sutil */
+        }
+
+        .table-custom tbody td {
+            padding: 15px 15px;
+            /* Más padding */
+            vertical-align: middle;
+            border-top: 1px solid #dee2e6;
+            font-size: 1.15rem;
+            /* Aumentado */
+        }
+
+        .table-custom thead th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        .table-custom thead th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        #paginacionResultados {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .pagination .page-item .page-link {
+            border: none;
+            color: #333;
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            margin: 0 10px;
+            /* Más separación */
+            border-radius: 50% !important;
+            width: 45px;
+            /* Un poco más grande */
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            font-size: 1.3rem;
+            /* Letra más grande */
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #691C32;
+            /* Guinda Institucional Oscuro */
+            color: white;
+            font-weight: 700;
+        }
+
+        .pagination .page-item.disabled .page-link {
+            color: #ccc;
+            cursor: default;
+        }
+
+        .pagination .page-item:first-child .page-link,
+        .pagination .page-item:last-child .page-link {
+            border-radius: 0 !important;
+            /* Anterior/Siguiente no circulares */
+            width: auto;
+            color: #691C32;
+            font-weight: 600;
+        }
+
+
+        /* Usar filter para sombra unificada del globo y la punta */
+        .leaflet-popup {
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+        }
+
+        .leaflet-popup-tip {
+            box-shadow: none !important;
+        }
+
+        .leaflet-popup-content {
+            margin: 24px 20px 20px 20px !important;
+            /* Margen uniforme */
+            width: 320px !important;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.5;
+        }
+
+        .custom-popup-title {
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            padding-right: 25px;
+            /* Evitar solapamiento con X */
+            padding-left: 25px;
+            /* Balancear */
+            line-height: 1.3;
+        }
+
+        .custom-popup-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #222;
+            margin-top: 15px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .custom-popup-text {
+            font-size: 0.9rem;
+            color: #444;
+            /* Texto más oscuro */
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .custom-popup-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            /* Más padding interno */
+            margin-top: 25px;
+            text-align: center;
+            color: #611232 !important;
+            background: white;
+            border: 1px solid #611232;
+            border-radius: 6px;
+            text-decoration: none !important;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            box-sizing: border-box;
+            /* Asegurar que el padding no rompa el ancho */
+        }
+
+        .custom-popup-btn:hover {
+            background: #611232;
+            color: white !important;
+            /* Forzar blanco en hover */
+        }
+
+        /* Ajuste específico para el botón de cerrar */
+        .leaflet-container a.leaflet-popup-close-button {
+            top: 14px;
+            right: 14px;
+            color: #555;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 8px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        /* CUSTOM MARKER CLUSTER */
+        .marker-cluster-small,
+        .marker-cluster-medium,
+        .marker-cluster-large {
+            background-color: rgba(97, 18, 50, 0.6) !important;
+        }
+
+        .marker-cluster-small div,
+        .marker-cluster-medium div,
+        .marker-cluster-large div {
+            background-color: #611232 !important;
+            color: white !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Modal de Carga -->
+    <div id="loadingModal" class="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Cargando datos de vacunación...</div>
+    </div>
+
+    <!-- HERO SECTION: Contiene Título y Filtros -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">¿Dónde me vacuno?</h1>
+            <p class="hero-subtitle">
+                Encuentra aquí todos los Centros de Salud que cuentan con vacunas contra el sarampión.
+            </p>
+
+            <!-- Filtros integrados en el Hero -->
+            <div class="row pt-4">
+                <div class="col-md-3">
+                    <label class="filter-label">Tipo de vacuna</label>
+                    <select id="selBiologico" class="form-control hero-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="filter-label">Entidad</label>
+                    <select id="selEntidad" class="form-control hero-select">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="filter-label">Municipio</label>
+                    <select id="selMunicipio" class="form-control hero-select">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="filter-label">Grupo de edad</label>
+                    <select id="selGrupoEdad" class="form-control hero-select">
+                        <option value="">Todos</option>
+                        <option value="6-11m">6 a 11 meses (SR)</option>
+                        <option value="1-9a">1 a 9 años (SRP)</option>
+                        <option value="10-49a">10 a 49 años (SR)</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3" style="display: none;">
+                    <label class="filter-label">Tipo de Unidad</label>
+                    <select id="selTipoUnidad" class="form-control hero-select">
+                        <option value="">Todas</option>
+                        <option value="unidad">Unidades Vacunadoras</option>
+                        <option value="puesto">Puestos de vacunación</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL: Mapa y Resultados -->
+    <div class="container main-content-card">
+
+        <div id="map"></div>
+
+        <div id="listaResultados" class="row" style="margin-top: 60px; display: flex; flex-wrap: wrap;"></div>
+        <div id="paginacionResultados" class="d-flex justify-content-center mt-4 mb-5"></div>
+
+        <div class="row mt-5 mb-4">
+            <div class="col-12 text-center">
+                <img src="assets/banner.jpeg" alt="Banner Informativo"
+                    style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+    <script>
+        document.write(`<script src="assets/leaflet/dist/leaflet.js?v=${v_asset}"><\/script>`);
+    </script>
+    <!-- Marker Cluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        let datos = [];
+
+        /* ================= MAPA ================= */
+        const vistaInicial = { center: [23.5, -102], zoom: 5 };
+        const map = L.map('map').setView(vistaInicial.center, vistaInicial.zoom);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        const layerCentros = L.markerClusterGroup().addTo(map);
+
+        /* ================= ICONOS ================= */
+        // Icono SVG Personalizado color #611232
+        const customIcon = L.divIcon({
+            className: 'custom-pin',
+            html: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#611232" width="40px" height="40px" style="filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));">
+  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  <circle cx="12" cy="9" r="2.5" fill="white"/>
+</svg>`,
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
+            popupAnchor: [0, -40]
+        });
+
+        /* ================= ELEMENTOS ================= */
+        const selTipoUnidad = document.getElementById('selTipoUnidad');
+        const selGrupoEdad = document.getElementById('selGrupoEdad');
+        const selBiologico = document.getElementById('selBiologico');
+        const selEntidad = document.getElementById('selEntidad');
+        const selMunicipio = document.getElementById('selMunicipio');
+        const lista = document.getElementById('listaResultados');
+
+        /* ================= NORMALIZAR ================= */
+        const CATALOGO_BIOLOGICOS = [
+            { key: 'neumococo', label: 'Neumococo' },
+            { key: 'neuemococo', label: 'Neumococo' }, // Typo común
+            { key: 'hexavalente', label: 'Hexavalente' },
+            { key: 'hepatitis b', label: 'Hepatitis B' },
+            { key: 'hepatitis a', label: 'Hepatitis A' },
+            { key: 'rotavirus', label: 'Rotavirus' },
+            { key: 'tdpa', label: 'Tdpa (Tétanos, difteria, acelular de pertussis)' },
+            { key: 'dpt', label: 'DPT (Difteria, Pertussis, Tétanos)' },
+            { key: 'td', label: 'Td (Tétanos y Difteria)' },
+            { key: 'srp', label: 'SRP (Triple viral contra sarampión)' },
+            { key: 'sr', label: 'SR (Doble viral contra sarampión)' },
+            { key: 'vph', label: 'VPH' },
+            { key: 'influenza', label: 'Influenza' },
+            { key: 'covid', label: 'COVID' },
+            { key: 'varicela', label: 'Varicela' }
+        ];
+
+        function normalizarBiologico(b) {
+            if (!b) return '';
+            // Limpieza básica: minúsculas, sin acentos, sin puntuación extra
+            const texto = b.toLowerCase()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9 ]/g, '');
+
+            const match = CATALOGO_BIOLOGICOS.find(item => texto.includes(item.key));
+
+            // Si hay match, retorna etiqueta oficial. Si no, capitaliza primera letra del original.
+            return match ? match.label : (b.charAt(0).toUpperCase() + b.slice(1).trim());
+        }
+
+        /* ================= BIOLOGICOS ================= */
+        function populateBiologicosSelect() {
+            const set = new Set();
+
+            datos.forEach(d => {
+                if (!d.biologicos) return;
+                d.biologicos.forEach(b => set.add(normalizarBiologico(b)));
+            });
+
+            [...set].sort().forEach(b => {
+                const o = document.createElement('option');
+                o.value = b;
+                o.textContent = b;
+                selBiologico.appendChild(o);
+            });
+        }
+
+        function popupHTML(d) {
+            const gmaps = `https://www.google.com/maps?q=${d.lat},${d.lng}`;
+            // Convertir lista a bullets
+            // const listaBio = d.biologicos?.map(b => `<li>${b}</li>`).join('') || '<li>Sin información</li>';
+
+            // Texto de vacunas limpio
+            let vacunasText = '';
+            if (Array.isArray(d.biologicos)) {
+                vacunasText = d.biologicos.map(b => `<div>${b}</div>`).join('');
+            } else if (d.biologicos) {
+                vacunasText = d.biologicos;
+            } else {
+                vacunasText = 'Sin información';
+            }
+
+            return `
+                <div class="custom-popup-title">${d.sede}</div>
+                
+                <span class="custom-popup-label">Dirección</span>
+                <div class="custom-popup-text">${d.direccion}</div>
+                <div class="custom-popup-text">${d.municipio}, ${d.entidad}</div>
+
+                <span class="custom-popup-label">Horario</span>
+                <div class="custom-popup-text">${d.horario || 'No especificado'}</div>
+                ${d.dias ? `<div class="custom-popup-text">${d.dias}</div>` : ''}
+
+                <span class="custom-popup-label">Tipo de vacuna</span>
+                <div class="custom-popup-text">${vacunasText}</div>
+
+                <a href="${gmaps}" target="_blank" class="custom-popup-btn">
+                    Ver en Google Maps
+                </a>
+            `;
+        }
+
+
+        /* ================= UTILIDADES ================= */
+        // Eliminar diacríticos y minusculas para búsqueda (Normalización)
+        function normalizeStr(str) {
+            return (str || '').toString().toLowerCase()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                .trim();
+        }
+
+        function normalizeEntity(str) {
+            const norm = normalizeStr(str);
+            if (norm === 'ciudad de mexico' || norm === 'cdmx') return 'cdmx';
+            if (norm === 'veracruz' || norm === 'veracruz de ignacio de la llave') return 'veracruz';
+            return norm;
+        }
+
+        /* ================= CARGA JSON ================= */
+        // Usamos la misma versión horaria para el JSON
+        fetch(`centros_vacunacion.json?v=${v_asset}`, {
+            headers: {
+                "Accept-Encoding": "gzip", // opcional, normalmente el navegador lo hace
+                "Accept": "application/json"
+            }
+        })
+            .then(r => r.json())
+            .then(json => {
+                datos = json; // Usamos datos crudos, el orden se maneja en selects
+
+                // Llenar select Entidad (Deduplicado por normalización)
+                const entidadesMap = new Map();
+                datos.forEach(d => {
+                    const norm = normalizeEntity(d.entidad);
+                    if (!norm) return;
+                    if (!entidadesMap.has(norm)) {
+                        entidadesMap.set(norm, d.entidad); // Guardar primera aparición como etiqueta
+                    }
+                });
+
+                // Forzar etiquetas personalizadas
+                if (entidadesMap.has('cdmx')) entidadesMap.set('cdmx', 'CDMX');
+                if (entidadesMap.has('veracruz')) entidadesMap.set('veracruz', 'VERACRUZ DE IGNACIO DE LA LLAVE');
+
+                [...entidadesMap.keys()].sort().forEach(key => {
+                    const o = document.createElement('option');
+                    o.value = key; // Valor: normalizado (sin acentos)
+                    o.textContent = entidadesMap.get(key); // Texto: Original (con acentos)
+                    selEntidad.appendChild(o);
+                });
+
+                populateBiologicosSelect();
+                populateMunicipios();
+                render();
+
+                // Ocultar modal
+                document.getElementById('loadingModal').style.display = 'none';
+            });
+
+        /* ================= MUNICIPIOS ================= */
+        function populateMunicipios() {
+            selMunicipio.innerHTML = '<option value="">Todos</option>';
+            const entSeleccionada = selEntidad.value;
+
+            const municipiosMap = new Map();
+
+            datos.filter(d => !entSeleccionada || normalizeEntity(d.entidad) === entSeleccionada)
+                .forEach(d => {
+                    const norm = normalizeStr(d.municipio);
+                    if (!norm) return;
+                    if (!municipiosMap.has(norm)) {
+                        municipiosMap.set(norm, d.municipio);
+                    }
+                });
+
+            [...municipiosMap.keys()].sort().forEach(key => {
+                const o = document.createElement('option');
+                o.value = key;
+                o.textContent = municipiosMap.get(key);
+                selMunicipio.appendChild(o);
+            });
+        }
+
+        /* ================= DEPENDENCIAS ================= */
+        selEntidad.addEventListener('change', () => {
+            populateMunicipios();
+            render();
+        });
+
+        selTipoUnidad.addEventListener('change', render);
+
+        selBiologico.addEventListener('change', () => {
+            selGrupoEdad.value = ''; // Resetear grupo edad si se cambia biológico manualmente
+            render();
+        });
+
+        selGrupoEdad.addEventListener('change', () => {
+            const val = selGrupoEdad.value;
+            if (val === '6-11m') selBiologico.value = 'SR (Doble viral contra sarampión)';
+            else if (val === '1-9a') selBiologico.value = 'SRP (Triple viral contra sarampión)';
+            else if (val === '10-49a') selBiologico.value = 'SR (Doble viral contra sarampión)';
+            else selBiologico.value = '';
+            render();
+        });
+
+        selMunicipio.addEventListener('change', render);
+
+        /* ================= RENDER ================= */
+        /* ================= PAGINACION ================= */
+        /* ================= PAGINACION ================= */
+        let resultadosFiltrados = [];
+        let markerMap = new Map(); // Mapa para guardar referencias a marcadores
+        let paginaActual = 1;
+        const porPagina = 9;
+        let currentSort = { column: null, direction: 'asc' };
+
+        function sortTable(column) {
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
+
+            resultadosFiltrados.sort((a, b) => {
+                let valA = (a[column] || '').toString().toLowerCase();
+                let valB = (b[column] || '').toString().toLowerCase();
+
+                if (column === 'biologicos') {
+                    valA = (Array.isArray(a.biologicos) ? a.biologicos.join('') : (a.biologicos || '')).toLowerCase();
+                    valB = (Array.isArray(b.biologicos) ? b.biologicos.join('') : (b.biologicos || '')).toLowerCase();
+                }
+
+                if (valA < valB) return currentSort.direction === 'asc' ? -1 : 1;
+                if (valA > valB) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            paginaActual = 1;
+            renderListaPaginada();
+        }
+
+        /* ================= RENDER ================= */
+        function render() {
+            layerCentros.clearLayers();
+            const lista = document.getElementById('listaResultados');
+            const divPaginacion = document.getElementById('paginacionResultados');
+
+            // Limpiar contenedores
+            if (lista) lista.innerHTML = '';
+            if (divPaginacion) divPaginacion.innerHTML = '';
+
+            const tipoUnidad = selTipoUnidad.value;
+            const biologico = selBiologico.value;
+            const entidad = selEntidad.value; // Normalizado
+            const municipio = selMunicipio.value; // Normalizado
+
+            // 1. Filtrar datos y guardar en variable global
+            resultadosFiltrados = datos.filter(d => {
+                if (tipoUnidad === 'unidad' && d.clues === '') return false;
+                if (tipoUnidad === 'puesto' && d.clues !== '') return false;
+
+                return (!biologico || d.biologicos.map(normalizarBiologico).includes(biologico)) &&
+                    (!entidad || normalizeEntity(d.entidad) === entidad) &&
+                    (!municipio || normalizeStr(d.municipio) === municipio);
+            });
+
+            // 2. Pintar Mapa (Todos los resultados filtrados)
+            const bounds = [];
+            markerMap.clear(); // Limpiar mapa previo
+
+            resultadosFiltrados.forEach(d => {
+                if (d.lat && d.lng) {
+                    const marker = L.marker([d.lat, d.lng], { icon: customIcon })
+                        .bindPopup(popupHTML(d));
+
+                    layerCentros.addLayer(marker);
+                    markerMap.set(d, marker); // Guardar referencia
+                    bounds.push([d.lat, d.lng]);
+                }
+            });
+
+            if (bounds.length) {
+                map.fitBounds(bounds, { padding: [40, 40] });
+            }
+
+            // 3. Renderizar Lista Paginada (Solo si hay filtros activos)
+            const filtrosActivos = (entidad !== '' || municipio !== '' || biologico !== '' || selGrupoEdad.value !== '');
+            if (filtrosActivos) {
+                paginaActual = 1;
+                renderListaPaginada();
+            }
+        }
+
+        function renderListaPaginada() {
+            const lista = document.getElementById('listaResultados');
+            lista.innerHTML = '';
+
+            const start = (paginaActual - 1) * porPagina;
+            const end = start + porPagina;
+            const paginaDatos = resultadosFiltrados.slice(start, end);
+
+            // Crear wrapper responsivo
+            const responsiveDiv = document.createElement('div');
+            responsiveDiv.className = 'table-responsive';
+
+            // Titulo de la tabla
+            const title = document.createElement('h3');
+            title.textContent = 'Puestos de vacunación';
+            title.style.fontFamily = "'Montserrat', sans-serif";
+            title.style.fontWeight = '700';
+            title.style.fontSize = '2rem';
+            title.style.marginBottom = '20px';
+            title.style.color = '#000';
+            lista.appendChild(title);
+
+            // Crear tabla
+            const table = document.createElement('table');
+            table.className = 'table table-custom';
+
+            // Header
+            const thead = document.createElement('thead');
+
+            const getSortIcon = (col) => {
+                if (currentSort.column !== col) return '<span style="opacity:0.3; font-size:0.8em; margin-left:5px">↕</span>';
+                return currentSort.direction === 'asc' ? '<span style="margin-left:5px">▲</span>' : '<span style="margin-left:5px">▼</span>';
+            };
+
+            thead.innerHTML = `
+                <tr>
+                    <th onclick="sortTable('sede')" style="cursor:pointer" title="Ordenar por Nombre">Nombre de la sede ${getSortIcon('sede')}</th>
+                    <th onclick="sortTable('entidad')" style="cursor:pointer" title="Ordenar por Entidad">Entidad ${getSortIcon('entidad')}</th>
+                    <th onclick="sortTable('municipio')" style="cursor:pointer" title="Ordenar por Municipio">Municipio ${getSortIcon('municipio')}</th>
+                    <th onclick="sortTable('direccion')" style="cursor:pointer" title="Ordenar por Dirección">Dirección ${getSortIcon('direccion')}</th>
+                    <th onclick="sortTable('biologicos')" style="cursor:pointer" title="Ordenar por Vacunas">Vacunas disponibles ${getSortIcon('biologicos')}</th>
+                    <th onclick="sortTable('horario')" style="cursor:pointer" title="Ordenar por Horario">Horario de atención ${getSortIcon('horario')}</th>
+                </tr>
+            `;
+            table.appendChild(thead);
+
+            const tbody = document.createElement('tbody');
+
+            paginaDatos.forEach(d => {
+                if (!d.lat || !d.lng) return;
+
+                const tr = document.createElement('tr');
+
+                // Procesar vacunas para mostrar (si hay lista)
+                let vacunasText = '';
+                // Lógica simple: mostramos 'biologicos' del JSON o un placeholder si no hay
+                // Adaptar según estructura real del JSON. Asumo que es d.biologicos
+                // Si d.biologicos es un array string, lo unimos.
+                if (Array.isArray(d.biologicos)) {
+                    vacunasText = d.biologicos.join(', ');
+                } else if (d.biologicos) {
+                    vacunasText = d.biologicos;
+                } else {
+                    vacunasText = '-----';
+                }
+
+                tr.innerHTML = `
+                    <td style="font-weight: 600; color: #333;">${d.sede}</td>
+                    <td>${d.entidad}</td>
+                    <td>${d.municipio}</td>
+                    <td>${d.direccion}</td>
+                    <td>${vacunasText}</td>
+                    <td>${d.horario || 'No especificado'} <br> <small class="text-muted">${d.dias || ''}</small></td>
+                `;
+
+                // Interacción al click
+                tr.onclick = () => {
+                    map.setView([d.lat, d.lng], 16);
+                    const marker = markerMap.get(d);
+                    if (marker) marker.openPopup();
+                    document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
+                };
+
+                tbody.appendChild(tr);
+            });
+
+            table.appendChild(tbody);
+            responsiveDiv.appendChild(table);
+            lista.appendChild(responsiveDiv);
+
+            renderControlesPaginacion();
+        }
+
+        function renderControlesPaginacion() {
+            const div = document.getElementById('paginacionResultados');
+            if (!div) return;
+            div.innerHTML = '';
+
+            const totalPaginas = Math.ceil(resultadosFiltrados.length / porPagina);
+            if (totalPaginas <= 1) return;
+
+            const nav = document.createElement('nav');
+            const ul = document.createElement('ul');
+            ul.className = 'pagination justify-content-center align-items-center mb-5'; // Centrado y con margen
+
+            const createPageItem = (text, enabled, isActive, onClick) => {
+                const li = document.createElement('li');
+                li.className = `page-item ${!enabled ? 'disabled' : ''} ${isActive ? 'active' : ''}`;
+
+                const a = document.createElement('a');
+                a.className = 'page-link';
+                a.href = '#';
+                a.innerHTML = text;
+
+                if (enabled) {
+                    a.onclick = (e) => {
+                        e.preventDefault();
+                        if (!isActive) onClick();
+                    };
+                    a.style.cursor = 'pointer';
+                } else {
+                    a.onclick = (e) => e.preventDefault();
+                }
+
+                li.appendChild(a);
+                return li;
+            };
+
+            // Botón ANTERIOR (< Anterior)
+            // Icono SVG chevron-left o texto simple "< Anterior"
+            const prevText = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left mr-1" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg> Anterior`;
+
+            ul.appendChild(createPageItem(prevText, paginaActual > 1, false, () => {
+                paginaActual--;
+                renderListaPaginada();
+            }));
+
+            // Lógica de Números de Página (Ventana deslizante si son muchas)
+            let startPage = Math.max(1, paginaActual - 2);
+            let endPage = Math.min(totalPaginas, startPage + 4);
+
+            if (endPage - startPage < 4) {
+                startPage = Math.max(1, endPage - 4);
+            }
+
+            // Primer página siempre visible si hay hueco
+            if (startPage > 1) {
+                ul.appendChild(createPageItem('1', true, false, () => {
+                    paginaActual = 1;
+                    renderListaPaginada();
+                }));
+                if (startPage > 2) {
+                    const liDots = document.createElement('li');
+                    liDots.className = 'page-item disabled';
+                    liDots.innerHTML = '<span class="page-link" style="border:none;">...</span>';
+                    ul.appendChild(liDots);
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                ul.appendChild(createPageItem(i.toString(), true, i === paginaActual, () => {
+                    paginaActual = i;
+                    renderListaPaginada();
+                }));
+            }
+
+            // Última página siempre visible si hay hueco
+            if (endPage < totalPaginas) {
+                if (endPage < totalPaginas - 1) {
+                    const liDots = document.createElement('li');
+                    liDots.className = 'page-item disabled';
+                    liDots.innerHTML = '<span class="page-link" style="border:none;">...</span>';
+                    ul.appendChild(liDots);
+                }
+                ul.appendChild(createPageItem(totalPaginas.toString(), true, false, () => {
+                    paginaActual = totalPaginas;
+                    renderListaPaginada();
+                }));
+            }
+
+            // Botón SIGUIENTE (Siguiente >)
+            const nextText = `Siguiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+</svg>`;
+
+            ul.appendChild(createPageItem(nextText, paginaActual < totalPaginas, false, () => {
+                paginaActual++;
+                renderListaPaginada();
+            }));
+
+            nav.appendChild(ul);
+            div.appendChild(nav);
+        }
+
+        const resetControl = L.control({ position: 'topright' });
+
+        resetControl.onAdd = function () {
+            const div = L.DomUtil.create('div', 'leaflet-bar');
+            div.innerHTML = '<a href="#" title="Restablecer vista" style="font-size: 18px;">⟳</a>';
+            div.style.backgroundColor = 'white';
+            div.style.cursor = 'pointer';
+
+            div.onclick = (e) => {
+                e.preventDefault();
+                render();
+                map.setView(vistaInicial.center, vistaInicial.zoom);
+                if (window.userLocationLayer) {
+                    map.removeLayer(window.userLocationLayer);
+                }
+            };
+
+            return div;
+        };
+
+        resetControl.addTo(map);
+
+        /* ================= GEOLOCALIZACION ================= */
+        const locationControl = L.control({ position: 'topright' });
+
+        locationControl.onAdd = function () {
+            const div = L.DomUtil.create('div', 'leaflet-bar');
+            div.innerHTML = '<a href="#" title="Mi Ubicación" style="font-size: 18px;">📍</a>';
+            div.style.backgroundColor = 'white';
+            div.style.cursor = 'pointer';
+
+            div.onclick = (e) => {
+                e.preventDefault();
+                if (!navigator.geolocation) {
+                    alert("Tu navegador no soporta geolocalización");
+                    return;
+                }
+
+                div.innerHTML = '<a href="#">⌛</a>'; // Loading state
+
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        const { latitude, longitude } = pos.coords;
+
+                        // Remover marcador anterior si existe
+                        if (window.userLocationLayer) {
+                            map.removeLayer(window.userLocationLayer);
+                        }
+
+                        // Crear marcador de usuario (Círculo azul)
+                        window.userLocationLayer = L.circleMarker([latitude, longitude], {
+                            radius: 8,
+                            fillColor: "#3388ff",
+                            color: "#fff",
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.8
+                        }).addTo(map);
+
+                        window.userLocationLayer.bindPopup("Estás aquí").openPopup();
+
+                        // Zoom a la ubicación
+                        map.setView([latitude, longitude], 14);
+                        div.innerHTML = '<a href="#" title="Mi Ubicación" style="font-size: 18px;">📍</a>';
+                    },
+                    (err) => {
+                        console.error(err);
+                        alert("No pudimos obtener tu ubicación. Verifica los permisos.");
+                        div.innerHTML = '<a href="#" title="Mi Ubicación" style="font-size: 18px;">📍</a>';
+                    },
+                    { enableHighAccuracy: true }
+                );
+            };
+
+            return div;
+        };
+
+        locationControl.addTo(map);
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPB01CRXJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JPB01CRXJB');
+    </script>
+</body>
+
+</html>

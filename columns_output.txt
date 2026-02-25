@@ -1,0 +1,68 @@
+
+================================================================================
+SHEET: Poblaci?nTotal 2026
+================================================================================
+  Row 0: ['POBLACI?N 2026, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)']
+  Row 1: ['Grupo', '< 1 a?o ', ' 1 a?o  ', '2 a?os  ', '3 a?os  ', '4 a?os  ', '5 a?os  ', '6 a?os  ', '7 a?os  ', '8 a?os', '9 a?os', '10 a?os', '11 a?os', '12 a?os', '13 a?os', '14 a?os', '15 a 19 a?os', '20 a 39 a?os', '40 a 49 a?os', '50 a 59 a?os', '60 a?os y m?s', 'TOTAL']
+  Row 2: ['TOTAL', '1132021', '1156506', '1143910', '1169610', '1174204', '1153890', '1131348', '1114548', '1100660', '1101820', '1125081', '1122263', '1086406', '1018138', '932817', '3816611', '16525373', '7507564', '5489890', '5480877', '55483537']
+  Row 3: ['AGUASCALIENTES', '10535', '10353', '10192', '9957', '9732', '9649', '9413', '9338', '9287', '9333', '9578', '9676', '9246', '8648', '8157', '35885', '134068', '65030', '42262', '30539', '450878']
+  Row 4: ['BAJA CALIFORNIA', '25628', '25015', '21570', '23153', '24288', '24756', '24620', '24625', '24648', '25073', '25654', '26304', '26043', '24965', '23882', '108169', '428481', '199548', '155011', '130242', '1391675']
+  Row 5: ['BAJA CALIFORNIA SUR', '4269', '5327', '5493', '5728', '5893', '5446', '5298', '4943', '4874', '4806', '4840', '4958', '4896', '4565', '4196', '18311', '84911', '39365', '24118', '17845', '260082']
+  Row 6: ['CAMPECHE', '7281', '6883', '7293', '7549', '7926', '7983', '8143', '8226', '8232', '8235', '8338', '8696', '8583', '7982', '7379', '30970', '120651', '55104', '38482', '36481', '400417']
+  Row 7: ['COAHUILA', '18650', '15746', '14399', '14070', '14749', '15510', '15382', '15619', '15724', '15900', '15947', '16432', '16490', '16125', '15930', '83039', '206744', '90350', '56696', '64023', '737525']
+
+  DURANGO ROW(S):
+  Columns: ['POBLACI?N 2026, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15', 'Unnamed: 16', 'Unnamed: 17', 'Unnamed: 18', 'Unnamed: 19', 'Unnamed: 20', 'Unnamed: 21']
+   POBLACI?N 2026, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR) Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7 Unnamed: 8 Unnamed: 9 Unnamed: 10 Unnamed: 11 Unnamed: 12 Unnamed: 13 Unnamed: 14 Unnamed: 15 Unnamed: 16 Unnamed: 17 Unnamed: 18 Unnamed: 19 Unnamed: 20 Unnamed: 21
+11                                                                                   DURANGO      12669      12255      12293      13071      13323      13532      13869      14008      13684       13912       14749       15065       14710       13519       12410       51174      192899       80995       52756       47754      628647
+
+================================================================================
+SHEET: Pob META
+================================================================================
+  Row 0: ['POBLACI?N META 2026, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)']
+  Row 1: ['50% de menores de 1 a?o', '1', '1', '0.5', '0.5', '0.5', '0.5']
+  Row 2: ['Grupo', '6 a 11 meses', '1 a?o', '18 meses', 'Rezagados\n2 a 12 a?os', '13 a 19 a?os ', '20 A 39', '40 A 49', 'TOTAL']
+  Row 3: ['TOTAL', '566019', '1156506', '1156506', '3105938', '2307024', '8262696', '3753789', '19742459']
+  Row 4: ['AGUASCALIENTES', '5268', '10353', '10353', '26350', '21076', '67034', '32515', '167681']
+  Row 5: ['BAJA CALIFORNIA', '12814', '25015', '25015', '67684', '62806', '214241', '99774', '494535']
+  Row 6: ['BAJA CALIFORNIA SUR', '2135', '5327', '5327', '14294', '10829', '42456', '19683', '97916']
+  Row 7: ['CAMPECHE', '3641', '6883', '6883', '22301', '18532', '60326', '27552', '142477']
+
+  DURANGO ROW(S):
+  Columns: ['POBLACI?N META 2026, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']
+   POBLACI?N META 2026, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR) Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7 Unnamed: 8
+12                                                                                        DURANGO       6335      12255      12255      38054      30841      96450      40498     230353
+
+================================================================================
+SHEET: Dosis aplicadas
+================================================================================
+  Row 0: ['DOSIS APLICADAS DE VACUNA CONTRA SARAMPI?N, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)']
+  Row 1: ['FUENTE: RDA 3er Trimestre 2025 + plataforma SIS CENSIA 1ro Octubre 2025 al 6 de febrero 2026']
+  Row 2: ['GRUPO', '6 a 11 meses', '1 a?o', '18 meses', 'Rezagados\n2 a 12 a?os', '13 a 19 a?os ', '20 A 39', '40 A 49', 'TOTAL']
+  Row 3: ['NACIONAL', '126549', '138295', '137555', '1369739', '791229', '4030953', '556103', '7150423']
+  Row 4: ['AGUASCALIENTES', '543', '1263', '807', '13165', '6201', '33310', '6990', '62279']
+  Row 5: ['BAJA CALIFORNIA', '673', '2754', '2651', '31509', '4087', '36961', '5620', '84255']
+  Row 6: ['BAJA CALIFORNIA SUR', '7', '681', '498', '4569', '1813', '9101', '890', '17559']
+  Row 7: ['CAMPECHE', '2747', '478', '381', '2048', '2985', '36087', '3197', '47923']
+
+  DURANGO ROW(S):
+  Columns: ['DOSIS APLICADAS DE VACUNA CONTRA SARAMPI?N, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']
+   DOSIS APLICADAS DE VACUNA CONTRA SARAMPI?N, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR) Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7 Unnamed: 8
+12                                                                                                               DURANGO       8226       1309       1050      13759       8423      31497       6083      70347
+
+================================================================================
+SHEET: Susceptibles
+================================================================================
+  Row 0: ['SUSCEPTIBLES, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)']
+  Row 1: ['Poblaci?n META  menos las Dosis aplicadas 1ro de enero de 2025 al 6 de febrero 2026 = Susceptibles', 'Poblaci?n META menos las Dosis aplicadas 1ro de enero al 6 de febrero 2026 = Susceptibles', 'Poblaci?n META menos las Dosis aplicadas 1ro de enero al 6 de febrero 2026 = Susceptibles', 'Poblaci?n META  menos las Dosis aplicadas de 2 a 9 a?os 1ro de enero de 2025 al 6 de febrero 2026 = Susceptibles', 'Poblaci?n META  menos las Dosis aplicadas de 10 a 19 a?os 1ro de enero de 2025 al 6 de febrero 2026 = Susceptibles', 'Poblaci?n META  menos las Dosis aplicadas 1ro de enero de 2025 al 6 de febrero 2026 = Susceptibles', 'Poblaci?n META  menos las Dosis aplicadas 1ro de enero de 2025 al 6 de febrero 2026 = Susceptibles']
+  Row 2: ['GRUPO', '6 a 11 meses', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', '1 a?o', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', '18 meses', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', 'Rezagados\n2 a 12 a?os', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', '13 a 19 a?os ', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', '20 A 39', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', '40 A 49', 'RATIFICACI?N O RECTIFICACI?N', 'JUSTIFICACI?N', 'TOTAL']
+  Row 3: ['NACIONAL', '441361', '95573', '41978', '1796546', '1583139', '4556050', '3197686', '11712333']
+  Row 4: ['AGUASCALIENTES', '4725', '1003', '31', '13185', '14875', '33724', '25525', '93068']
+  Row 5: ['BAJA CALIFORNIA', '12141', '2695', '373', '36175', '58719', '177280', '94154', '381537']
+  Row 6: ['BAJA CALIFORNIA SUR', '2128', '664', '0', '9725', '9016', '33355', '18793', '73681']
+  Row 7: ['CAMPECHE', '894', '575', '382', '20253', '15547', '24239', '24355', '86245']
+
+  DURANGO ROW(S):
+  Columns: ['SUSCEPTIBLES, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR)', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14', 'Unnamed: 15', 'Unnamed: 16', 'Unnamed: 17', 'Unnamed: 18', 'Unnamed: 19', 'Unnamed: 20', 'Unnamed: 21', 'Unnamed: 22']
+   SUSCEPTIBLES, SECRETAR?A DE SALUD (INCLUIDOS LOS SERVICIOS DE SALUD DEL IMSS BIENESTAR) Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7 Unnamed: 8 Unnamed: 9 Unnamed: 10 Unnamed: 11 Unnamed: 12 Unnamed: 13 Unnamed: 14 Unnamed: 15 Unnamed: 16 Unnamed: 17 Unnamed: 18 Unnamed: 19 Unnamed: 20 Unnamed: 21 Unnamed: 22
+12                                                                                 DURANGO          0        NaN        NaN        671        NaN        NaN        223        NaN        NaN       24295         NaN         NaN       22418         NaN         NaN       64953         NaN         NaN       34415         NaN         NaN      146975
