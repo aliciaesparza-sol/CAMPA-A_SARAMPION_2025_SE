@@ -1,0 +1,36 @@
+{
+    "peak_week": "SE42",
+    "peak_doses": 11654,
+    "avg_weekly_doses": 1449.68,
+    "total_doses": 36242,
+    "final_coverage": 35.19255792274378,
+    "meta_total": 102982,
+    "top_municipalities": [
+        {
+            "Municipio": "CANATLAN",
+            "Coverage": 207.33137829912022
+        },
+        {
+            "Municipio": "TEPEHUANES",
+            "Coverage": 140.084388185654
+        },
+        {
+            "Municipio": "CANELAS",
+            "Coverage": 73.68421052631578
+        },
+        {
+            "Municipio": "SAN LUIS DEL CORDERO",
+            "Coverage": 63.49206349206349
+        },
+        {
+            "Municipio": "NUEVO IDEAL",
+            "Coverage": 56.87687687687688
+        }
+    ],
+    "coverage_by_indicator": {
+        "12 Meses": 1276.9539078156313,
+        "18 Meses": 934.2685370741483,
+        "6 A\u00f1os": 1383.5714285714284,
+        "10-49 A\u00f1os": 4157.142857142857
+    }
+}

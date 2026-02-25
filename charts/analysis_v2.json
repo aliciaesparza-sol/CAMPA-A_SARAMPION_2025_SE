@@ -1,0 +1,14 @@
+{
+    "peak_week": "SE42",
+    "peak_doses": 11654,
+    "avg_weekly_doses": 1449.68,
+    "total_doses": 36242,
+    "final_coverage": 1832.2548028311428,
+    "meta_total": 1978,
+    "coverage_by_indicator": {
+        "12 Meses": 1276.9539078156313,
+        "18 Meses": 934.2685370741483,
+        "6 A\u00f1os": 1383.5714285714284,
+        "10-49 A\u00f1os": 4157.142857142857
+    }
+}
