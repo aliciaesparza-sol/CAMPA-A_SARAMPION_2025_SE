@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Póster de Vacunación Durango 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d35400;
+            --secondary: #e67e22;
+            --accent: #f1c40f;
+            --bg: #ffffff;
+            --text: #2d2d2d;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Outfit', sans-serif;
+            background-color: #fff9f5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .poster {
+            width: 800px;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            border: 8px solid var(--primary);
+        }
+
+        .decoration {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logos-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .ssd-logo {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.6rem;
+            text-align: left;
+            border-left: 6px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .ssd-logo span {
+            font-size: 0.8rem;
+            color: #666;
+            display: block;
+        }
+
+        .gob-logo {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .gob-logo strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .header p {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .date {
+            background: var(--primary);
+            color: white;
+            display: inline-block;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .point {
+            background: #fffdfb;
+            border: 2px solid rgba(211, 84, 0, 0.1);
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .point h3 {
+            color: var(--primary);
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .point .time {
+            color: #d35400;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .footer-note {
+            margin-top: 60px;
+            font-size: 1rem;
+            color: #888;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px dashed #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="poster">
+        <div class="decoration"></div>
+        <div class="header">
+            <div class="logos-top">
+                <div class="ssd-logo">SSD <br><span>Servicios de Salud de Durango</span></div>
+                <div class="gob-logo">GOBIERNO DEL ESTADO DE <br><strong>DURANGO</strong></div>
+            </div>
+            <div class="date">MIÉRCOLES 25 DE MARZO, 2026</div>
+            <h1>MACROCENTROS DE VACUNACIÓN</h1>
+            <p>PROTEGIENDO NUESTRA COMUNIDAD</p>
+        </div>
+
+        <div class="grid">
+            <div class="point">
+                <h3>Edificio Central UJED</h3>
+                <div class="time">09:00 - 20:00</div>
+            </div>
+            <div class="point">
+                <h3>UAD Lobos</h3>
+                <div class="time">09:00 - 20:00</div>
+            </div>
+            <div class="point">
+                <h3>Universidad Vizcaya</h3>
+                <div class="time">09:00 - 20:00</div>
+            </div>
+            <div class="point">
+                <h3>UTD</h3>
+                <div class="time">09:00 - 20:00</div>
+            </div>
+            <div class="point">
+                <h3>Universidad Politécnica</h3>
+                <div class="time">09:00 - 20:00</div>
+            </div>
+            <div class="point">
+                <h3>Río Dorado</h3>
+                <div class="time">09:00 - 18:00</div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            * Sin previa cita. Presentar identificación oficial.
+        </div>
+    </div>
+</body>
+
+</html>

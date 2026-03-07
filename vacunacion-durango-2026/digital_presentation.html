@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexta Reunión Extraordinaria COEVA - Digital</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --guinda: #4a0e1c;
+            --dorado: #b8860b;
+            --gris-claro: #f8f9fa;
+            --transicion: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #333;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .presentation-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100px);
+            transition: var(--transicion);
+            overflow: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .slide.prev {
+            transform: translateX(-100px);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .header-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-image: url('media__1772817133723.png');
+            background-size: cover;
+            background-position: center top;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+        .slide-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Controls */
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .btn {
+            background: var(--guinda);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(74, 14, 28, 0.3);
+        }
+
+        .btn:hover {
+            background: var(--dorado);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(184, 134, 11, 0.4);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-weight: 800;
+            color: var(--guinda);
+            font-size: 1.2rem;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-banner"></div>
+
+    <div class="presentation-container" id="slides-container">
+        <!-- Slides will be injected here -->
+    </div>
+
+    <div class="slide-number" id="progress">1 / 13</div>
+
+    <div class="controls">
+        <button class="btn" id="prevBtn" disabled>←</button>
+        <button class="btn" id="nextBtn">→</button>
+    </div>
+
+    <script>
+        const slidesData = Array.from({ length: 13 }, (_, i) => ({
+            image: `slides_hq/slide_${i + 1}.png`
+        }));
+
+        const container = document.getElementById('slides-container');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const progress = document.getElementById('progress');
+
+        let currentSlide = 0;
+
+        function initSlides() {
+            slidesData.forEach((data, index) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `slide ${index === 0 ? 'active' : ''}`;
+
+                // Use the full image as the central content, fitting the screen
+                slideDiv.innerHTML = `
+                    <div class="slide-image-container">
+                        <img src="${data.image}" alt="Slide ${index + 1}">
+                    </div>
+                `;
+                container.appendChild(slideDiv);
+            });
+        }
+
+        function updateSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+
+            // Current slide leaving
+            slides[currentSlide].classList.remove('active');
+            if (direction === 'next') {
+                slides[currentSlide].classList.add('prev');
+            } else {
+                slides[currentSlide].classList.remove('prev');
+            }
+
+            // New slide entering
+            currentSlide = direction === 'next' ? currentSlide + 1 : currentSlide - 1;
+
+            slides[currentSlide].classList.remove('prev');
+            slides[currentSlide].classList.add('active');
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+            progress.innerText = `${currentSlide + 1} / ${slides.length}`;
+        }
+
+        nextBtn.addEventListener('click', () => updateSlide('next'));
+        prevBtn.addEventListener('click', () => updateSlide('prev'));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentSlide < slidesData.length - 1) updateSlide('next');
+            if (e.key === 'ArrowLeft' && currentSlide > 0) updateSlide('prev');
+        });
+
+        initSlides();
+    </script>
+</body>
+
+</html>

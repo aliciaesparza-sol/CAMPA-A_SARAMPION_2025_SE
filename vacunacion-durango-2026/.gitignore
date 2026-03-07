@@ -1,0 +1,18 @@
+# Python scripts (cleanup)
+get_token.py
+create_repo.py
+analyze_pptx.py
+export_slides.py
+extract_doc.py
+extract_images.py
+generate_pptx.py
+generate_pptx_clean.py
+
+# Large binary files
+source_presentation.pptx
+Presentacion_COEVA_March_2026.pptx
+Presentacion_COEVA_Limpia.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
